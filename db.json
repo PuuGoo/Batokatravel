@@ -326,6 +326,25 @@
         "isPopular": false
       },
       "quantity": 1
+    },
+    {
+      "id": "100e",
+      "idProd": {
+        "id": "2",
+        "price": 2300000,
+        "price_sale": 2000000,
+        "name": "Khám phá Thái Lan",
+        "location": "Thành Phố Chiang Mai",
+        "time": 3,
+        "images": [
+          "https://pix8.agoda.net/geo/poi/222405/2_222405.jpg?ca=6&ce=1&s=600x"
+        ],
+        "rate_sale": 25,
+        "isSale": true,
+        "isFeatured": false,
+        "isPopular": false
+      },
+      "quantity": 4
     }
   ],
   "voucher": [

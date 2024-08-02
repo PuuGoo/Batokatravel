@@ -1,12 +1,17 @@
 import { Component, Renderer2, inject } from '@angular/core';
 import { Order, Product } from '../db';
 import { OrderService } from '../services/order.service';
-import { CommonModule, NgFor, NgForOf, registerLocaleData } from '@angular/common';
+import {
+  CommonModule,
+  NgFor,
+  NgForOf,
+  registerLocaleData,
+} from '@angular/common';
 import { ProductService } from '../services/product.service';
 import { Router, RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import localeVi from '@angular/common/locales/vi';
-registerLocaleData(localeVi)
+registerLocaleData(localeVi);
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -23,7 +28,6 @@ export class CartComponent {
   idOrder: number = -1;
   totalPrice = 0;
 
-
   deleteCart(event: any) {
     this.idOrder = event.target?.id;
 
@@ -36,10 +40,12 @@ export class CartComponent {
     this.orderService.getAllOrder().then((orders) => {
       this.orderService.orders = orders;
       this.router.navigateByUrl('/cart');
-    })
+    });
   }
 
-
+  checkout() {
+    window.open('http://localhost:8888/order/create_payment_url');
+  }
 
   constructor(private router: Router, private render: Renderer2) {
     this.orderService.getAllOrder().then((orders) => {
@@ -52,9 +58,5 @@ export class CartComponent {
         console.log(this.totalPrice);
       });
     });
-    
-    
   }
-
-
 }
