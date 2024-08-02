@@ -1,0 +1,338 @@
+{
+  "catelogies": [
+    {
+      "id": "1",
+      "name": "Việt Nam",
+      "image": "https://flagicons.lipis.dev/flags/4x3/vn.svg",
+      "storage": 14,
+      "isFeatured": true
+    },
+    {
+      "id": "2",
+      "name": "Thái Lan",
+      "image": "https://flagicons.lipis.dev/flags/4x3/th.svg",
+      "storage": 20,
+      "isFeatured": true
+    },
+    {
+      "id": "3",
+      "name": "Úc",
+      "image": "https://flagicons.lipis.dev/flags/4x3/au.svg",
+      "storage": 20,
+      "isFeatured": true
+    },
+    {
+      "id": "4",
+      "name": "Lào",
+      "image": "https://flagicons.lipis.dev/flags/4x3/la.svg",
+      "storage": 7,
+      "isFeatured": true
+    },
+    {
+      "id": "5",
+      "name": "Argentina",
+      "image": "https://flagicons.lipis.dev/flags/4x3/ar.svg",
+      "storage": 10,
+      "isFeatured": true
+    },
+    {
+      "id": "6",
+      "name": "Brazil",
+      "image": "https://flagicons.lipis.dev/flags/4x3/br.svg",
+      "storage": 17,
+      "isFeatured": true
+    },
+    {
+      "id": "7",
+      "name": "China",
+      "image": "https://flagicons.lipis.dev/flags/4x3/cn.svg",
+      "storage": 17
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "price": 1100000,
+      "price_sale": 1000000,
+      "name": "Khám phá Việt Nam",
+      "location": "Thành Phố Đà Nẵng",
+      "time": 4,
+      "images": [
+        "https://pix8.agoda.net/geo/poi/51323/2_51323_03.jpg?ca=7&ce=1&s=600x",
+        "https://pix8.agoda.net/geo/poi/222405/2_222405.jpg?ca=6&ce=1&s=600x"
+      ],
+      "rate_sale": 10,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "2",
+      "price": 2300000,
+      "price_sale": 2000000,
+      "name": "Khám phá Thái Lan",
+      "location": "Thành Phố Chiang Mai",
+      "time": 3,
+      "images": [
+        "https://pix8.agoda.net/geo/poi/222405/2_222405.jpg?ca=6&ce=1&s=600x"
+      ],
+      "rate_sale": 25,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "3",
+      "price": 4800000,
+      "price_sale": 4000000,
+      "name": "Khám phá Úc",
+      "location": "Thành Phố Gippsland",
+      "time": 5,
+      "images": [
+        "https://pix8.agoda.net/hotelImages/687/687154/687154_14080609040020704429.jpg?ca=2&ce=1&s=1280x"
+      ],
+      "rate_sale": 10,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "4",
+      "price": 6250000,
+      "price_sale": 5000000,
+      "name": "Khám phá Lào",
+      "location": "Thành Phố Muang Xai",
+      "time": 4,
+      "images": [
+        "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSuWlU6WKPAmsQ0YwKARbu0TzL3ZwPVgy_N_F8KRDVVFztyz38Ncna5R8JwOX7oTQwvmMRvN3Ro6eut042zt5kG9JD8aP3IpXYoKZ91Bg"
+      ],
+      "rate_sale": 15,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "5",
+      "price": 7200000,
+      "price_sale": 6000000,
+      "name": "Khám phá Argentina",
+      "location": "Thành Phố Pinamar",
+      "time": 4,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/138359955.jpg?k=a64a82775de014c4cfa97df25d4a994df6b2df751505641fd5349bf413f3c195&o=&s=600x"
+      ],
+      "rate_sale": 20,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "6",
+      "price": 10000000,
+      "price_sale": 8000000,
+      "name": "Khám phá Brazil",
+      "location": "Thành Phố Gramado",
+      "time": 7,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/546883566.jpg?k=71c1abc15f3b0c465c76650fff0341d47fd1bcb81d523f9f68076c31f80591e0&o=&s=600x"
+      ],
+      "rate_sale": 25,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "7",
+      "price": 9900000,
+      "price_sale": 9000000,
+      "name": "Khám phá Việt Nam",
+      "location": "Thành Phố Hồ Chí Minh",
+      "time": 5,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/365811879.jpg?k=9122d89251e088b8a977b3a02989ff12e6ebeb6688f1811581dcad564ee490c6&o=&s=600x"
+      ],
+      "rate_sale": 10,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "8",
+      "price": 11500000,
+      "price_sale": 10000000,
+      "name": "Khám phá Đức",
+      "location": "Thành Phố Wiek",
+      "time": 4,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max300/139290143.jpg?k=c059dc24edb1511b0df2aa2552c5273cdae273d18f4fa3dfedd8e788398e2667&o="
+      ],
+      "rate_sale": 10,
+      "isSale": true,
+      "isFeatured": false,
+      "isPopular": false
+    },
+    {
+      "id": "9",
+      "price": 1000000,
+      "price_sale": 0,
+      "name": "Khám phá Việt Nam",
+      "location": "Thành Phố Đà Lạt",
+      "time": 4,
+      "images": [
+        "https://pix8.agoda.net/geo/poi/28108/2_28108.jpg?ca=6&ce=1&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "10",
+      "price": 2000000,
+      "price_sale": 0,
+      "name": "Khám phá Thái Lan",
+      "location": "Thành Phố Phuket",
+      "time": 3,
+      "images": [
+        "https://pix8.agoda.net/geo/poi/30556/2_30556.jpg?ca=6&ce=1&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "11",
+      "price": 3000000,
+      "price_sale": 0,
+      "name": "Khám phá Úc",
+      "location": "Thành Phố Byron Bay",
+      "time": 5,
+      "images": [
+        "https://pix8.agoda.net/hotelImages/569/569400/569400_14071812570020337679.jpg?ca=2&ce=1&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "12",
+      "price": 4000000,
+      "price_sale": 0,
+      "name": "Khám phá Lào",
+      "location": "Thành Phố Vang Viêng",
+      "time": 4,
+      "images": [
+        "https://pix8.agoda.net/geo/poi/1445693/d823110c3db62684e0cf2b5964bb3059.jpg?ce=0&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "13",
+      "price": 5000000,
+      "price_sale": 0,
+      "name": "Khám phá Argentina",
+      "location": "Thành Phố Buenos Aires",
+      "time": 3,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/233891992.jpg?k=a257ac4383490c3ea945a730d200897fd50effada13a41a42253430113b3ba39&o=&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "14",
+      "price": 6000000,
+      "price_sale": 0,
+      "name": "Khám phá Brazil",
+      "location": "Thành Phố Buzios",
+      "time": 7,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/158950468.jpg?k=c2869f9f0c61d56e08c5e04fe19fad84faa90c0e9f79bc3e7ca86ea901a99570&o=&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "15",
+      "price": 7000000,
+      "price_sale": 0,
+      "name": "Khám phá Pháp",
+      "location": "Thành Phố Limoges",
+      "time": 4,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/576620414.jpg?k=2d1037840c1fb4cd86440a251972443664083055f722064e18de07e3e99227b3&o=&s=1280x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    },
+    {
+      "id": "16",
+      "price": 8000000,
+      "price_sale": 0,
+      "name": "Khám phá Đức",
+      "location": "Thành Phố Aachen",
+      "time": 4,
+      "images": [
+        "https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/5733257.jpg?k=6663e331ee4fbeae64176ec60b32e3eee052ba23ef9fb32e2e2105aeb7f94a93&o=&s=600x"
+      ],
+      "rate_sale": 0,
+      "isSale": false,
+      "isFeatured": false,
+      "isPopular": true
+    }
+  ],
+  "users": [
+    {
+      "id": "0c8e",
+      "username": "user01@gmail.com",
+      "password": "User01@batokatravel",
+      "role": "admin"
+    },
+    {
+      "id": "f145",
+      "username": "user02@gmail.com",
+      "password": "Ai13031997AI!",
+      "role": "user"
+    }
+  ],
+  "order": [
+    {
+      "id": "5482",
+      "idProd": {
+        "id": "1",
+        "price": 1100000,
+        "price_sale": 1000000,
+        "name": "Khám phá Việt Nam",
+        "location": "Thành Phố Đà Nẵng",
+        "time": 4,
+        "images": [
+          "https://pix8.agoda.net/geo/poi/51323/2_51323_03.jpg?ca=7&ce=1&s=600x",
+          "https://pix8.agoda.net/geo/poi/222405/2_222405.jpg?ca=6&ce=1&s=600x"
+        ],
+        "rate_sale": 10,
+        "isSale": true,
+        "isFeatured": false,
+        "isPopular": false
+      },
+      "quantity": 1
+    }
+  ],
+  "voucher": [
+    {
+      "id": "1",
+      "name": "giamgia10%",
+      "value": 0.1
+    }
+  ]
+}

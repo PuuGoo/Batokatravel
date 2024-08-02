@@ -1,0 +1,89 @@
+<main>
+  <div class="container">
+    <div
+      class="site-sign-up d-flex align-items-center justify-content-center mt-5 mb-5"
+      style=""
+    >
+      <form [formGroup]="applySignUpForm" (submit)="submitSignUpForm()">
+        <div class="border rounded-2 p-4" style="width: fit-content">
+          <div class="ssu-title h2 text-center">Đăng ký</div>
+          <div class="text-center text-danger fw-bold">{{ this.message }}</div>
+          <div class="input-group mb-3" style="width: 392px">
+            <label for="" class="mb-2 h6">Email</label>
+            <input
+              type="email"
+              formControlName="email"
+              id=""
+              class="form-control w-100"
+              placeholder="Vui lòng nhập email"
+            />
+            <div class="text-danger mt-1">
+              @if (applySignUpForm.controls['email'].touched &&
+              applySignUpForm.controls['email'].errors?.['required']) {
+              <span>Email không được bỏ trống</span>
+              } @else if (applySignUpForm.controls['email'].errors?.['email']) {
+              <span>Email cần nhập đúng định dạng</span>
+              } 
+            </div>
+          </div>
+          <div class="input-group mb-2" style="width: 392px">
+            <label for="" class="mb-2 h6">Mật khẩu</label>
+            <input
+              type="password"
+              formControlName="pass"
+              id=""
+              class="form-control w-100"
+              placeholder="Vui lòng nhập mật khẩu"
+            />
+            <div class="text-danger mt-1">
+              @if (applySignUpForm.controls['pass'].touched &&
+              applySignUpForm.controls['pass'].errors?.['required']) {
+              <span>Password không được bỏ trống</span>
+              } @else if (applySignUpForm.controls['pass'].touched &&
+              applySignUpForm.controls['pass'].invalid) {
+              <span
+                >Mật khẩu cần ít nhất 1 ký tự thường, 1 ký tự viết hoa, 1 ký tự
+                đặc biệt và ít nhất 12 ký tự</span
+              >
+              }
+            </div>
+          </div>
+          <div class="input-group mb-2" style="width: 392px">
+            <label for="" class="mb-2 h6">Nhập Lại Mật khẩu</label>
+            <input
+              type="password"
+              formControlName="confirmpass"
+              id=""
+              class="form-control w-100"
+              placeholder="Vui lòng nhập lại mật khẩu"
+            />
+            <div class="text-danger mt-1">
+              @if (applySignUpForm.controls['confirmpass'].touched &&
+              applySignUpForm.controls['confirmpass'].errors?.['required']) {
+              <span>Xác nhận mật khẩu không được bỏ trống</span>
+              } @else if (this.applySignUpForm.value.pass !==
+              this.applySignUpForm.value.confirmpass) {
+              <span>Mật khẩu xác nhận không khớp với mật khẩu.</span>
+              }
+            </div>
+          </div>
+          <a routerLink="/forgotpassword" class="text-decoration-none">
+            <div class="ssu-sign-up h6 text-end mb-2 text-primary my-2">
+              Quên mật khẩu?
+            </div>
+          </a>
+          <div class="ssu-button w-100">
+            <button type="submit" class="btn btn-primary mb-3 w-100">
+              Đăng ký
+            </button>
+            <a routerLink="/signin">
+              <button type="button" class="btn btn-outline-primary w-100">
+                Quay lại
+              </button>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

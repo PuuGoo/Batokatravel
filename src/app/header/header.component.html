@@ -1,0 +1,193 @@
+<header class="header">
+  <div class="">
+    <div class="site-header">
+      <!-- Top header -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="col-2">
+            <a routerLink="/" class="navbar-brand">Batokatravel</a>
+          </div>
+          <div
+            class="col-8 d-none d-lg-block border-0 rounded-2 px-3 bg-body-tertiary position-relative"
+          >
+            <form
+              class="d-flex"
+              role="search"
+              [formGroup]="applyFormSearch"
+              id="form-search"
+            >
+              <div class="d-flex w-100">
+                <!-- <div class="dropdown border-end border-2 me-3">
+                  <button
+                    class="btn dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Tất cả chuyến du lịch
+                  </button>
+                  <ul class="dropdown-menu">
+                    @for(catelogy of catelogy; track catelogy) {
+                    <li>
+                      <a class="dropdown-item" routerLink="/catelogies">{{
+                        catelogy.name
+                      }}</a>
+                    </li>
+                    }
+                  </ul>
+                </div> -->
+                <div class="position-relative w-100">
+                  <input
+                    class="form-control me-2 border-0 bg-body-tertiary"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                    formControlName="keysearch"
+                    (input)="onChange()"
+                  />
+                  <a routerLink="/catelogies" class="nav-link">
+                    <i
+                      class="bi bi-search position-absolute top-50 end-0 translate-middle"
+                    ></i
+                  ></a>
+                </div>
+              </div>
+            </form>
+            <div
+              class="list-item-searched position-absolute z-1 right-0 start-0 end-0 d-{{
+                this.filterItems.length !== 0 &&
+                this.applyFormSearch.value.keysearch !== '' 
+                  ? ''
+                  : 'none'
+              }}"
+              id="result-search"
+            >
+              <ul class="list-group list-group-item-light">
+                @for (item of this.filterItems; track item) {
+                <li
+                  class="list-group-item border-0"
+                  style="cursor: pointer; padding-left: 28px !important"
+                  routerLink="catelogies"
+                >
+                  {{ item.name }} {{item.location}}
+                </li>
+                }
+              </ul>
+            </div>
+          </div>
+          <div class="col-2 d-none d-lg-flex justify-content-end">
+            <a class="nav-link position-relative me-3" routerLink="/cart"
+              ><i class="bi bi-cart fs-4"></i
+            >
+            @if(this.orderService.orders.length !== 0) {
+              <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger z-1" style="top: 10px" id="quantityCart">
+                {{this.orderService.orders.length}}
+              </span>
+            }
+          </a>
+            <div class="dropdown">
+              <button
+                class="border-0 bg-white"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-circle fs-4"></i>
+              </button>
+              <ul class="dropdown-menu" style="width: fit-content">
+                <li>
+                  <a
+                    class="dropdown-item d-{{
+                      this.userService.userLogin.value ? 'none' : ''
+                    }}"
+                    [routerLink]="['signin']"
+                    >Đăng nhập</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item d-{{
+                      !this.userService.userLogin.value ? 'none' : ''
+                    }}"
+                    [routerLink]="['changepassword']"
+                    >Thay đổi mật khẩu</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item d-{{
+                      !this.userService.userLogin.value ? 'none' : ''
+                    }}"
+                    (click)="logout()"
+                    >Đăng xuất</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-block d-lg-none">
+            <i class="fa-solid fa-bars fs-4"></i>
+          </div>
+        </div>
+      </nav>
+      <!-- Top header end -->
+      <!-- Menu Header -->
+      <ul class="nav bg-success p-2 d-none d-lg-block">
+        <div class="container d-flex">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-white ps-0 fs-5"
+              aria-current="page"
+              [routerLink]="['']"
+              >Trang chủ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-5" routerLink="/#">Giới thiệu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-5" routerLink="/contact"
+              >Liên hệ</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white fs-5" routerLink="/blog">Bài viết</a>
+          </li>
+          <div class="dropdown">
+            <button
+              class="btn btn-success dropdown-toggle fs-5"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Chuyến đi
+            </button>
+            <ul class="dropdown-menu">
+              @for (catelogy of catelogy; track catelogy) {
+              <li>
+                <a class="dropdown-item fs-5" routerLink="/catelogies">{{
+                  catelogy.name
+                }}</a>
+              </li>
+              }
+            </ul>
+          </div>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white fs-5 d-{{
+                this.userService.user.length !== 0 &&
+                this.userService.user[0].role === 'admin'
+                  ? ''
+                  : 'none'
+              }}"
+              routerLink="/#"
+              >Quản trị</a
+            >
+          </li>
+        </div>
+      </ul>
+      <!-- Menu Header End -->
+    </div>
+  </div>
+</header>
+

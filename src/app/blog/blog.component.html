@@ -1,0 +1,217 @@
+  <main>
+    <div class="container">
+      <section class="site-catelogy sc mt-5">
+        <div class="sc-sort d-flex align-items-center justify-content-end">
+          <p class="text-secondary h-100 m-0 me-3 d-none d-lg-block d-md-block">Sắp xếp theo:</p>
+          <div class="dropdown">
+            <button class="btn btn-outline-primary dropdown-toggle" type="button" id="triggerId"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Bài viết liên quan
+            </button>
+            <div class="dropdown-menu" aria-labelledby="triggerId">
+              <a class="dropdown-item" routerLink="/#">Bài viết theo tên A-Z</a>
+              <a class="dropdown-item" routerLink="/#">Bài viết theo tên Z-A</a>
+              <a class="dropdown-item" routerLink="/#">Sắp xếp bài viết nổi bật</a>
+              <a class="dropdown-item" routerLink="/#">Sắp xếp bài viết phổ biến</a>
+            </div>
+          </div>
+          <div class="sc-icon d-flex align-items-center ms-3 p-2 border-start">
+            <div class="sc-i-4 me-2">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="44" height="44" rx="8" fill="#1E4C2F" />
+                <path
+                  d="M32 18.52V13.98C32 12.57 31.36 12 29.77 12H25.73C24.14 12 23.5 12.57 23.5 13.98V18.51C23.5 19.93 24.14 20.49 25.73 20.49H29.77C31.36 20.5 32 19.93 32 18.52Z"
+                  fill="white" />
+                <path
+                  d="M32 29.77V25.73C32 24.14 31.36 23.5 29.77 23.5H25.73C24.14 23.5 23.5 24.14 23.5 25.73V29.77C23.5 31.36 24.14 32 25.73 32H29.77C31.36 32 32 31.36 32 29.77Z"
+                  fill="white" />
+                <path
+                  d="M20.5 18.52V13.98C20.5 12.57 19.86 12 18.27 12H14.23C12.64 12 12 12.57 12 13.98V18.51C12 19.93 12.64 20.49 14.23 20.49H18.27C19.86 20.5 20.5 19.93 20.5 18.52Z"
+                  fill="white" />
+                <path
+                  d="M20.5 29.77V25.73C20.5 24.14 19.86 23.5 18.27 23.5H14.23C12.64 23.5 12 24.14 12 25.73V29.77C12 31.36 12.64 32 14.23 32H18.27C19.86 32 20.5 31.36 20.5 29.77Z"
+                  fill="white" />
+              </svg>
+            </div>
+            <div class="sc-i-3">
+              <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="44" height="44" rx="8" stroke="#E4E9EE" />
+                <path d="M14 18H32" stroke="#0B0F0E" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M14 23H32" stroke="#0B0F0E" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M14 28H32" stroke="#0B0F0E" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="sc-body mt-4">
+          <div class="row">
+            <div class="col-lg-3 col-md-4 d-none d-lg-block d-md-block">
+              <div class="sc-filter border rounded-3 p-3">
+                <h4 class="border-bottom pb-3">Các gợi ý lựa chọn</h4>
+                <div class="sc-filter-item border-bottom pb-3 mt-3">
+                  <p class="d-inline-flex gap-1" style="width: 100%">
+                    <a class="btn w-100 text-start p-0 fs-6 fw-bold d-flex align-items-center justify-content-between"
+                      data-bs-toggle="collapse" routerLink="/#collapseExample" role="button" aria-expanded="false"
+                      aria-controls="collapseExample">
+                      Quốc gia<i class="fa-solid fa-chevron-up fa-sm"></i>
+                    </a>
+                  </p>
+                  <div class="collapse show" id="collapseExample">
+                    <div class="card card-body border-0 p-0">
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Việt Nam
+                          </label>
+                        </div>
+                      </div>
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Thái Lan
+                          </label>
+                        </div>
+                      </div>
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Úc
+                          </label>
+                        </div>
+                      </div>
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Lào
+                          </label>
+                        </div>
+                      </div>
+                      <a routerLink="/#" class="text-success fw-bold text-decoration-none">Hiển thị tất cả</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="sc-filter-item border-bottom pb-3 mt-3">
+                  <p class="d-inline-flex gap-1" style="width: 100%">
+                    <a class="btn w-100 text-start p-0 fs-6 fw-bold d-flex align-items-center justify-content-between"
+                      data-bs-toggle="collapse" routerLink="/#collapseExample2" role="button" aria-expanded="false"
+                      aria-controls="collapseExample2">
+                      Thành phố<i class="fa-solid fa-chevron-up fa-sm"></i>
+                    </a>
+                  </p>
+                  <div class="collapse show" id="collapseExample2">
+                    <div class="card card-body border-0 p-0">
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Đà Nẵng
+                          </label>
+                        </div>
+                      </div>
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Chiang Mai
+                          </label>
+                        </div>
+                      </div>
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Gippsland
+                          </label>
+                        </div>
+                      </div>
+                      <div class="sc-filter-item-checkbox">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          <label class="form-check-label" for="flexCheckDefault">
+                            Muang Xai
+                          </label>
+                        </div>
+                      </div>
+                      <a routerLink="/#" class="text-success fw-bold text-decoration-none">Hiển thị tất cả</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-8">
+        <div class="row">
+          <a routerLink="/blogdetail" class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-3 text-decoration-none">
+            <div class="card h-100">
+              <img class="card-img-top" src="https://pix8.agoda.net/geo/poi/28108/2_28108.jpg?ca=6&ce=1&s=1280x"
+                alt="Title" height="250px" />
+              <div class="card-body">
+                <p class="card-text text-secondary">17/07/2024</p>
+                <h4 class="card-title">Thành phố Đà Lạt có gì hấp dẫn?</h4>
+                <p class="card-text overflow-hidden" style="max-height: 190px">
+                  Được thiên nhiên ưu ái ban tặng cho khí hậu ôn hòa của miền
+                  ôn đới, Đà Lạt dường như không có cái nóng bức của miền Nam
+                  hay cái lạnh tím tái của các tỉnh miền Bắc mà khí hậu nơi
+                  đây lúc nào cũng dịu mát. Với cái mát lạnh ấy của Đà Lạt và
+                  thiên nhiên tuyệt đẹp nơi đây đã được đi vào những áng văn
+                  thơ, những bức tranh ảnh, nghệ thuật. Do đó, Đà Lạt đã không
+                  chỉ thu hút du khách trong nước mà cả nước ngoài hàng năm
+                  đến đây tham quan và tận hưởng kỳ nghỉ tuyệt vời nhất.
+                </p>
+              </div>
+            </div>
+          </a>
+          <a routerLink="/blogdetail" class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-3 text-decoration-none">
+            <div class="card h-100">
+              <img class="card-img-top" src="https://pix8.agoda.net/geo/poi/30556/2_30556.jpg?ca=6&ce=1&s=1280x"
+                alt="Title" height="250px" />
+              <div class="card-body">
+                <p class="card-text text-secondary">17/07/2024</p>
+                <h4 class="card-title">Thành phố Phuket có gì hấp dẫn?</h4>
+                <p class="card-text overflow-hidden" style="max-height: 190px">
+                  Bạn đã sẵn sàng cho một chuyến đi Phuket tự túc thú vị chưa?
+                  Hãy ghi lại những kinh nghiệm du lịch Phuket hữu ích.
+                </p>
+              </div>
+            </div>
+          </a>
+          <a routerLink="/blogdetail" class="col-lg-4 col-md-6 col-12 mb-lg-0 mb-3 text-decoration-none">
+            <div class="card h-100">
+              <img class="card-img-top"
+                src="https://pix8.agoda.net/hotelImages/569/569400/569400_14071812570020337679.jpg?ca=2&ce=1&s=1280x"
+                alt="Title" height="250px" />
+              <div class="card-body">
+                <p class="card-text text-secondary">17/07/2024</p>
+                <h4 class="card-title">Thành phố Byron Bay có gì?</h4>
+                <p class="card-text overflow-hidden" style="max-height: 190px">
+                  Các mẹo nhỏ của Jetstar khi du lịch tới Vịnh Byron, Úc bao
+                  gồm: thời tiết, sự kiện trong năm, cách di chuyển tới điểm
+                  đến, phương tiện giao thông và những.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+              <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-lg-lg">
+                      <li class="page-item"><a class="page-link" routerLink="/#">Trang trước</a></li>
+                      <li class="page-item"><a class="page-link" routerLink="/#">1</a></li>
+                      <li class="page-item"><a class="page-link" routerLink="/#">2</a></li>
+                      <li class="page-item"><a class="page-link" routerLink="/#">3</a></li>
+                      <li class="page-item"><a class="page-link" routerLink="/#">Trang sau</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>

@@ -1,0 +1,56 @@
+<div class="card position-relative h-100">
+  <img
+    class="card-img-top"
+    src="{{ productSale.images[0] }}"
+    alt="Title"
+    height="200px"
+  />
+  <div class="card-body">
+    @if(productSale.isSale == true) {
+    <p class="card-text text-primary h5">
+      {{ productSale.price_sale | currency: 'VND' : 'đồng' : "0.0-0" :'vi' }} 
+      <del class="h6 text-secondary">{{ productSale.price | currency: 'VND' : 'đồng' : "0.0-0" :'vi'}} </del>
+    </p>
+    <div
+      class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+      style="top: 16px; right: 16px"
+    >
+      <i class="fa-brands fa-salesforce me-1" style="color: #ff0000"></i
+      >{{ productSale.rate_sale }}%
+    </div>
+    } @else {
+    <p class="card-text text-primary h5">{{ productSale.price | currency: 'VND' : 'đồng' : "0.0-0" :'vi'}} </p>
+    <div
+      class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+      style="top: 16px"
+    >
+      <i class="fa-solid fa-star me-1" style="color: #ffd43b"></i>4.8
+    </div>
+    }
+
+    <h4 class="card-title">{{ productSale.name }}</h4>
+    <div
+      class="progress"
+      role="progressbar"
+      aria-label="Example 1px high"
+      aria-valuenow="25"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      style="height: 1px"
+    >
+      <div class="progress-bar" style="width: 0"></div>
+    </div>
+    <div
+      class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+    >
+      <div class="pta-geo me-3">
+        <i class="fa-solid fa-location-dot" style="color: #001eff"></i>
+        {{ productSale.location }}
+      </div>
+      <div class="pta-date">
+        <i class="fa-solid fa-clock" style="color: #0008ff"></i>
+        {{ productSale.time }} ngày
+      </div>
+    </div>
+  </div>
+</div>

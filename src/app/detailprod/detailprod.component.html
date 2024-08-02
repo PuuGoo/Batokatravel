@@ -1,0 +1,1251 @@
+<style>
+  @media (min-width: 992px) {
+    .dp select {
+      width: 25% !important;
+    }
+    .dp .dp-btn-cart {
+      width: 50% !important;
+    }
+  }
+</style>
+
+<main>
+  <div class="container">
+    <section class="detailProduct dp mt-5">
+      <div class="row">
+        <div class="col-lg-6">
+          <div id="carouselExampleIndicators" class="carousel slide h-100">
+            <div class="carousel-inner border-0 rounded-2" style="width: 645px">
+              @for(i of [1,2,3,4]; track i) { @if(i == 1) {
+              <div
+                class="carousel-item active"
+                style="min-height: 424px !important"
+              >
+                <img
+                  src="{{productById?.images?.[0]}}"
+                  class="d-block w-100"
+                  alt="..."
+                  style="height: 424px !important"
+                />
+              </div>
+              } @else {
+              <div class="carousel-item" style="min-height: 424px !important">
+                <img
+                  src="{{productById?.images?.[0]}}"
+                  class="d-block w-100"
+                  alt="..."
+                  style="height: 424px !important"
+                />
+              </div>
+              } }
+
+              <button
+                class="carousel-control-prev d-none d-lg-block d-md-block"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next d-none d-lg-block d-md-block"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <div
+              class="carousel-indicators position-static m-0 p-0 justify-content-start mt-4"
+              style="bottom: -190px; left: 0"
+            >
+              <div class="row">
+                @for(i of [1,2,3,4]; track i;) {
+                <div class="col-3">
+                  <img
+                    src="{{productById?.images?.[0]}}"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active border-0 rounded-2 m-0 img-fluid img-lg-none h-100 h-lg-100"
+                    style="width: 150px; height: 150px"
+                    aria-current="true"
+                    aria-label="Slide 1"
+                  />
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <form [formGroup]="orderApply" (submit)="orderSubmit()">
+            <h2 class="h2-lg h2-md h3 mt-lg-0 mt-3">
+              {{ productById?.name }}
+            </h2>
+            <div class="dp-rate">
+              <i class="fa-solid fa-star me-2 my-3" style="color: #ffd43b"></i
+              >4.8
+              <span class="h6 text-secondary ms-3">8 suất</span>
+            </div>
+            <div class="dp-price text-success fw-bold">
+              {{ productById?.price }} VND
+            </div>
+            <div class="dp-desr mt-3">
+              {{ productById?.location }}
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="" class="form-label fw-bold">Số lượng</label>
+              <select
+                class="form-select form-select-lg w-lg-25 w-md-25 w-50"
+                formControlName="quantity"
+                id=""
+              >
+                <option value="1" selected >1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg w-100 dp-btn-cart"
+            >
+              <i class="fa-solid fa-cart-shopping me-2"></i>Thêm vô giỏ hàng
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="row mt-4 ms-0">
+        <nav id="navbar-example02" class="navbar bg-body-tertiary px-3 mb-3">
+          <ul class="nav nav-pills w-100">
+            <li class="nav-item col-lg-4 col-12">
+              <a class="nav-link" routerLink="/#scrollspyHeading01"
+                >Thông tin chi tiết chuyến đi</a
+              >
+            </li>
+            <li class="nav-item col-lg-4 col-12">
+              <a class="nav-link" routerLink="/#scrollspyHeading02"
+                >Đánh giả chuyến đi</a
+              >
+            </li>
+            <li class="nav-item col-lg-4 col-12">
+              <a class="nav-link" routerLink="/#scrollspyHeading03"
+                >Chuyến đi tương tự</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div
+          data-bs-spy="scroll"
+          data-bs-target="#navbar-example02"
+          data-bs-root-margin="0px 0px -40%"
+          data-bs-smooth-scroll="true"
+          class="scrollspy-example bg-body-tertiary p-3 rounded-2"
+          tabindex="0"
+        >
+          <div class="dp-tourdetail">
+            <h4 id="scrollspyHeading01">Thông tin chi tiết chuyến đi</h4>
+            <p>
+              Tour Đà Lạt 4 ngày 3 đêm sẽ giúp Quý khách tới một thành phố Đà
+              Lạt với cảnh sắc thiên nhiên làm say lòng người và những nét văn
+              hóa, lịch sử độc đáo. Một số người cho rằng việc đi tour Đà Lạt
+              chỉ là để thưởng thức vẻ đẹp của thiên nhiên, thời tiết ôn hòa, ẩm
+              thực đa dạng, chụp hình lưu niệm hay làm những việc đại loại như
+              thế. Nói như vậy chỉ đúng một phần và rõ ràng chưa phản ánh đầy đủ
+              lý do cho việc đi du lịch tại Đà Lạt. Những yếu tố khác rất ý
+              nghĩa đã bị bỏ quên khi đến Đà Lạt đó là văn hóa, lịch sử, kiến
+              trúc… Tại sao như vậy? Có mối liên hệ nào không giữa du lịch và
+              các yếu tố đó tại thành phố sương mù Đà Lạt này? Để tìm câu trả
+              lời, khám phá thành phố với vẻ đẹp của ngàn hoa, của hàng thông cổ
+              thụ, của những làn sương mù hay cái cảm giác lạnh lẽo, hanh hao
+              nhưng có sức mê hoặc lòng người này qua tour Đà Lạt 4 ngày 3 đêm
+              giá rẻ
+            </p>
+          </div>
+          <div class="dp-review">
+            <h4 id="scrollspyHeading02">Đánh giá chuyến đi</h4>
+            <div class="dp-review-rate">
+              <div class="row">
+                <div
+                  class="col-lg-4 col-md-4 position-relative d-flex align-items-center"
+                >
+                  <div class="spinner-border text-warning" role="status"></div>
+                  <span
+                    class="position-absolute d-none"
+                    style="top: 50px; left: 21px; font-size: 12px"
+                    >4.8</span
+                  >
+                  <div class="dp-rr-content ms-3">
+                    <div class="dp-rr-star d-flex align-items-center mt-2">
+                      <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                      <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                      <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                      <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                      <i class="fa-solid fa-star" style="color: #ffd43b"></i>
+                    </div>
+                    <div class="fs-6 text-secondary">13 người đánh giá</div>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                  <div class="row d-flex align-items-center">
+                    <div class="col-lg-1 col-md-1 col-2">
+                      5.0<i
+                        class="ms-1 fa-solid fa-star"
+                        style="color: #ffd43b"
+                      ></i>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-8">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Success example"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 6px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 85%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-2">10</div>
+                  </div>
+                  <div class="row d-flex align-items-center">
+                    <div class="col-lg-1 col-md-1 col-2">
+                      4.0<i
+                        class="ms-1 fa-solid fa-star"
+                        style="color: #ffd43b"
+                      ></i>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-8">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Success example"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 6px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 55%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-2">2</div>
+                  </div>
+                  <div class="row d-flex align-items-center">
+                    <div class="col-lg-1 col-md-1 col-2">
+                      3.0<i
+                        class="ms-1 fa-solid fa-star"
+                        style="color: #ffd43b"
+                      ></i>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-8">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Success example"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 6px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 35%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-2">1</div>
+                  </div>
+                  <div class="row d-flex align-items-center">
+                    <div class="col-lg-1 col-md-1 col-2">
+                      2.0<i
+                        class="ms-1 fa-solid fa-star"
+                        style="color: #ffd43b"
+                      ></i>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-8">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Success example"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 6px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-2">0</div>
+                  </div>
+                  <div class="row d-flex align-items-center">
+                    <div class="col-lg-1 col-md-1 col-2">
+                      1.0<i
+                        class="ms-1 fa-solid fa-star"
+                        style="color: #ffd43b"
+                      ></i>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-8">
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Success example"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 6px"
+                      >
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-2">0</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="sc-body mt-4">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 d-none d-lg-block d-md-block">
+                      <div class="sc-filter border rounded-3 p-3">
+                        <h4 class="border-bottom pb-3">Các gợi ý lựa chọn</h4>
+                        <div class="sc-filter-item border-bottom pb-3 mt-3">
+                          <p class="d-inline-flex gap-1" style="width: 100%">
+                            <a
+                              class="btn w-100 text-start p-0 fs-6 fw-bold d-flex align-items-center justify-content-between"
+                              data-bs-toggle="collapse"
+                              routerLink="/#collapseExample"
+                              role="button"
+                              aria-expanded="false"
+                              aria-controls="collapseExample"
+                            >
+                              Sao<i class="fa-solid fa-chevron-up fa-sm"></i>
+                            </a>
+                          </p>
+                          <div class="collapse show" id="collapseExample">
+                            <div class="card card-body border-0 p-0">
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    <i
+                                      class="fa-solid fa-star me-1"
+                                      style="color: #ffd43b"
+                                    ></i
+                                    >5.0
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    <i
+                                      class="fa-solid fa-star me-1"
+                                      style="color: #ffd43b"
+                                    ></i
+                                    >4.0
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    <i
+                                      class="fa-solid fa-star me-1"
+                                      style="color: #ffd43b"
+                                    ></i
+                                    >3.0
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    <i
+                                      class="fa-solid fa-star me-1"
+                                      style="color: #ffd43b"
+                                    ></i
+                                    >2.0
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    <i
+                                      class="fa-solid fa-star me-1"
+                                      style="color: #ffd43b"
+                                    ></i
+                                    >1.0
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="sc-filter-item border-bottom pb-3 mt-3">
+                          <p class="d-inline-flex gap-1" style="width: 100%">
+                            <a
+                              class="btn w-100 text-start p-0 fs-6 fw-bold d-flex align-items-center justify-content-between"
+                              data-bs-toggle="collapse"
+                              routerLink="/#collapseExample2"
+                              role="button"
+                              aria-expanded="false"
+                              aria-controls="collapseExample2"
+                            >
+                              Chủ đề<i class="fa-solid fa-chevron-up fa-sm"></i>
+                            </a>
+                          </p>
+                          <div class="collapse show" id="collapseExample2">
+                            <div class="card card-body border-0 p-0">
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    Dịch vụ
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    Khách Sạn
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    Trang thiết bị
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="sc-filter-item-checkbox">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  <label
+                                    class="form-check-label"
+                                    for="flexCheckDefault"
+                                  >
+                                    Giá cả
+                                  </label>
+                                </div>
+                              </div>
+                              <a
+                                routerLink="/#"
+                                class="text-success fw-bold text-decoration-none"
+                                >Hiển thị tất cả</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                      <div class="row d-flex justify-content-lg-end">
+                        <!-- Button trigger modal -->
+                        <div
+                          class="col-6 col-lg-12 col-md-12 d-flex justify-content-lg-end align-items-center"
+                        >
+                          <button
+                            type="button"
+                            class="btn btn-primary w-lg-25 mb-lg-0 mb-md-0 mb-3"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                          >
+                            Viết bình luận
+                          </button>
+                        </div>
+                        <div
+                          class="col-6 d-lg-none d-md-none d-flex justify-content-end align-items-center"
+                        >
+                          <i class="fa-solid fa-filter fs-3"></i>
+                        </div>
+
+                        <!-- Modal -->
+                        <div
+                          class="modal fade"
+                          id="exampleModal"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog vh-100">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1
+                                  class="modal-title fs-5"
+                                  id="exampleModalLabel"
+                                >
+                                  Bình Luận
+                                </h1>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div class="modal-body">
+                                <form>
+                                  <div class="mb-3">
+                                    <label
+                                      for="exampleInputEmail1"
+                                      class="form-label"
+                                      >Tiêu đề bình luận</label
+                                    >
+                                    <input
+                                      type="email"
+                                      class="form-control"
+                                      id="exampleInputEmail1"
+                                      aria-describedby="emailHelp"
+                                    />
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="floatingTextarea"
+                                      >Nội dung bình luận</label
+                                    >
+                                    <textarea
+                                      class="form-control mt-2"
+                                      placeholder="Viết bình luận ở đây"
+                                      id="floatingTextarea"
+                                    ></textarea>
+                                  </div>
+                                </form>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Quay lại
+                                </button>
+                                <button type="button" class="btn btn-primary">
+                                  Gửi bình luận
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row border-bottom pb-3 mb-3">
+                        <div class="dp-comment-rate">
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                        </div>
+                        <div class="dp-comment-title h6">
+                          Chuyến du lịch mang lại rất nhiều trải nghiệm thú vị
+                        </div>
+                        <div
+                          class="dp-comment-date text-secondary"
+                          style="font-size: 12px"
+                        >
+                          18/07/2024 15:28
+                        </div>
+                        <div class="dp-comment-user d-flex mt-2">
+                          <img
+                            class="border border-2 d-flex align-items-center justify-content-center rounded-4 bg-secondary"
+                            width="24"
+                            height="24"
+                            src="data:image/png;base64,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"
+                            alt=""
+                          />
+                          <div class="dp-comment-username ms-2">
+                            Ngô Đức Phú
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row border-bottom pb-3 mb-3">
+                        <div class="dp-comment-rate">
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                        </div>
+                        <div class="dp-comment-title h6">
+                          Chuyến du lịch mang lại rất nhiều trải nghiệm thú vị
+                        </div>
+                        <div
+                          class="dp-comment-date text-secondary"
+                          style="font-size: 12px"
+                        >
+                          18/07/2024 15:28
+                        </div>
+                        <div class="dp-comment-user d-flex mt-2">
+                          <img
+                            class="border border-2 d-flex align-items-center justify-content-center rounded-4 bg-secondary"
+                            width="24"
+                            height="24"
+                            src="data:image/png;base64,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"
+                            alt=""
+                          />
+                          <div class="dp-comment-username ms-2">
+                            Ngô Đức Phú
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row border-bottom pb-3 mb-3">
+                        <div class="dp-comment-rate">
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                          <i
+                            class="fa-solid fa-star"
+                            style="color: #ffd43b"
+                          ></i>
+                        </div>
+                        <div class="dp-comment-title h6">
+                          Chuyến du lịch mang lại rất nhiều trải nghiệm thú vị
+                        </div>
+                        <div
+                          class="dp-comment-date text-secondary"
+                          style="font-size: 12px"
+                        >
+                          18/07/2024 15:28
+                        </div>
+                        <div class="dp-comment-user d-flex mt-2">
+                          <img
+                            class="border border-2 d-flex align-items-center justify-content-center rounded-4 bg-secondary"
+                            width="24"
+                            height="24"
+                            src="data:image/png;base64,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"
+                            alt=""
+                          />
+                          <div class="dp-comment-username ms-2">
+                            Ngô Đức Phú
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dp-relatedproduct">
+            <section class="popularTour pt mt-5">
+              <h4 id="scrollspyHeading03">Chuyến đi tương tự</h4>
+              <div class="row">
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://pix8.agoda.net/geo/poi/51323/2_51323_03.jpg?ca=7&ce=1&s=600x"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        1.000.000 VND
+                        <del class="h6 text-secondary">1.100.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Việt Nam</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Đà Nẵng
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          4 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >10%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://pix8.agoda.net/geo/poi/222405/2_222405.jpg?ca=6&ce=1&s=600x"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        2.000.000 VND
+                        <del class="h6 text-secondary">2.300.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Thái Lan</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Chiang Mai
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          3 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >15%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://pix8.agoda.net/hotelImages/687/687154/687154_14080609040020704429.jpg?ca=2&ce=1&s=1280x"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        4.000.000 VND
+                        <del class="h6 text-secondary">4.800.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Úc</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Gippsland
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          5 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >20%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSuWlU6WKPAmsQ0YwKARbu0TzL3ZwPVgy_N_F8KRDVVFztyz38Ncna5R8JwOX7oTQwvmMRvN3Ro6eut042zt5kG9JD8aP3IpXYoKZ91Bg"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        5.000.000 VND
+                        <del class="h6 text-secondary">6.250.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Lào</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Muang Xai
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          4 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >25%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/138359955.jpg?k=a64a82775de014c4cfa97df25d4a994df6b2df751505641fd5349bf413f3c195&o=&s=600x"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        6.000.000 VND
+                        <del class="h6 text-secondary">7.200.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Argentina</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Pinamar
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          3 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >20%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/546883566.jpg?k=71c1abc15f3b0c465c76650fff0341d47fd1bcb81d523f9f68076c31f80591e0&o=&s=600x"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        8.000.000 VND
+                        <del class="h6 text-secondary">10.000.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Brazil</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Gramado
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          7 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >25%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://q-xx.bstatic.com/xdata/images/hotel/max1280x900/365811879.jpg?k=9122d89251e088b8a977b3a02989ff12e6ebeb6688f1811581dcad564ee490c6&o=&s=600x"
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        9.000.000 VND
+                        <del class="h6 text-secondary">9.900.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Pháp</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Saverdun
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          5 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >10%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  routerLink="/detailprod"
+                  class="col-lg-3 col-md-4 mb-4 text-decoration-none"
+                >
+                  <div class="card position-relative">
+                    <img
+                      class="card-img-top"
+                      src="https://q-xx.bstatic.com/xdata/images/hotel/max300/139290143.jpg?k=c059dc24edb1511b0df2aa2552c5273cdae273d18f4fa3dfedd8e788398e2667&o="
+                      alt="Title"
+                      height="200px"
+                    />
+                    <div class="card-body">
+                      <p class="card-text text-primary h5">
+                        10.000.000 VND
+                        <del class="h6 text-secondary">11.500.000 VND</del>
+                      </p>
+                      <h4 class="card-title">Khám phá Đức</h4>
+                      <div
+                        class="progress"
+                        role="progressbar"
+                        aria-label="Example 1px high"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="height: 1px"
+                      >
+                        <div class="progress-bar" style="width: 0"></div>
+                      </div>
+                      <div
+                        class="pt-address pta d-flex align-items-center justify-content-between mt-3"
+                      >
+                        <div class="pta-geo me-3">
+                          <i
+                            class="fa-solid fa-location-dot"
+                            style="color: #001eff"
+                          ></i>
+                          Thành Phố Wiek
+                        </div>
+                        <div class="pta-date">
+                          <i
+                            class="fa-solid fa-clock"
+                            style="color: #0008ff"
+                          ></i>
+                          4 ngày
+                        </div>
+                      </div>
+                      <div
+                        class="pt-rate border rounded-4 w-25 text-center h6 py-1 position-absolute bg-white"
+                        style="top: 16px; right: 16px"
+                      >
+                        <i
+                          class="fa-brands fa-salesforce me-1"
+                          style="color: #ff0000"
+                        ></i
+                        >15%
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
