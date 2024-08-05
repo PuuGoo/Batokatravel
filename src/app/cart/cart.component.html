@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-lg-8">
             <div class="table-responsive">
-              <table class="table table-bordered align-middle table-responsive">
+              <table class="table table-bordered align-middle text-center">
                 <thead>
                   <tr>
                     <th scope="col">
@@ -16,18 +16,21 @@
                           type="checkbox"
                           value=""
                           id="flexCheckDefault"
+                          [indeterminate]="partiallyCompleted()"
+                          (change)="update($event)"
+                          [checked]="task().completed"
                         />
                       </div>
                     </th>
                     <th scope="col">Sản phẩm</th>
                     <th scope="col">Giá</th>
-                    <th scope="col">Số lượng</th>
+                    <th scope="col" style="width: 300px;">Số lượng</th>
                     <th scope="col">Hành động</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @for (order of orders; track order) {
-                  <tr>
+                  @for (subtask of task().subtasks; track subtask; let i = $index) {
+                  <tr >
                     <th scope="row">
                       <div class="form-check">
                         <input
@@ -35,47 +38,42 @@
                           type="checkbox"
                           value=""
                           id="flexCheckDefault"
+                          [checked]="subtask.completed"
+                          (change)="update($event, i)"
                         />
                       </div>
                     </th>
                     <td class="d-flex align-items-center">
                       <img
-                        src="{{ order.idProd.images[0] }}"
+                        src="{{ subtask.order.idProd.images[0] }}"
                         alt=""
                         width="50"
                         height="50"
                       />
                       <div class="cart-prodname ms-3 h6">
-                        {{ order.idProd.name }}
+                        {{ subtask.order.idProd.name }}
                       </div>
                     </td>
                     <td>
                       {{
-                        order.idProd.price
+                        subtask.order.idProd.price
                           | currency : "VND" : "đồng" : "0.0-0" : "vi"
                       }}
                     </td>
-                    <td>
-                      <select
-                        class="form-select w-75"
-                        aria-label="Default select example"
-                        readonly
-                      >
-                        <option selected value="{{ order.quantity }}">
-                          {{ order.quantity }}
-                        </option>
-                        <option value="1">2</option>
-                        <option value="2">3</option>
-                        <option value="3">4</option>
-                      </select>
-                      <!-- <input type="number" class="form-control w-25" value="{{ order.quantity }}"> -->
+                    <td class="d-flex justify-content-center" >
+                      <div class="border border-1 rounded-3 d-flex justify-content-center w-50 p-1" style="transform: translate(0,-13px);width: 150px !important">
+                        <button (click)="decrementQuantity(i)" class="border border-0 bg-white px-3" type="button">-</button>                     
+                        <input name="quantity" type="number" class="form-control text-center border border-0 bg-white w-50" value="{{ subtask.order.quantity }}">
+                        <button (click)="incrementQuantity(i)" class="border border-0 bg-white px-3" type="button">+</button>   
+                      </div>
+
                     </td>
                     <td
                       class="text-center btndelete"
-                      [routerLink]="['/cart', order.id]"
+                      [routerLink]="['/cart', subtask.order.id]"
                       (click)="deleteCart($event)"
                     >
-                      <i class="fa-solid fa-trash" id="{{ order.id }}"></i>
+                      <i class="fa-solid fa-trash" id="{{ subtask.order.id }}"></i>
                     </td>
                   </tr>
                   }
@@ -85,20 +83,23 @@
           </div>
           <div class="col-lg-4 border rounded-3 p-3">
             <h4>Bảng tóm tắt</h4>
-            <div class="cart-itemsselected border-bottom pb-3">
-              @for (order of orders; track $index) {
+            <div class="cart-itemsselected border-bottom pb-3" *ngIf = "summary()">
+              @for (subtask of task().subtasks; track subtask) {
               <div
-                class="cart-itemselected d-flex justify-content-between text-secondary"
+                class="cart-itemselected d-flex justify-content-between text-secondary" *ngIf="subtask.completed"
               >
-                <div>{{ order?.idProd?.name }}</div>
+                <div>{{ subtask.order.idProd.name }}</div>
                 <div>
                   {{
-                    order.idProd.price * order.quantity
+                    subtask.order.idProd.price * subtask.order.quantity
                       | currency : "VND" : "đồng" : "0.0-0" : "vi"
                   }}
                 </div>
               </div>
               }
+            </div>
+            <div class="cart-itemsselected border-bottom pb-3" *ngIf = "!summary()">
+              <h5 class="text-secondary">Chưa có sản phẩm nào được chọn</h5>
             </div>
             <div class="cart-price mt-3 border-bottom pb-3">
               <div
@@ -115,7 +116,7 @@
                 class="cart-itemselected d-flex justify-content-between text-secondary"
               >
                 <div>Tiền giảm giá</div>
-                <div>{{this.totalPrice*0.15 | currency : "VND" : "đồng" : "0.0-0" : "vi"}}</div>
+                <div>{{this.totalPrice*this.voucher | currency : "VND" : "đồng" : "0.0-0" : "vi"}}</div>
               </div>
             </div>
             <div class="cart-price mt-3 border-bottom pb-3">
@@ -124,7 +125,7 @@
               >
                 <h5>Tổng giá</h5>
                 <h5>{{
-                  this.totalPrice | currency : "VND" : "đồng" : "0.0-0" : "vi"
+                  this.totalPrice - this.totalPrice*this.voucher | currency : "VND" : "đồng" : "0.0-0" : "vi"
                 }}</h5>
               </div>
             </div>
@@ -160,8 +161,8 @@
                         aria-label="Close"
                       ></button>
                     </div>
+                    <form [formGroup]="applyVoucher" (submit)="submitVoucher()">
                     <div class="modal-body">
-                      <form>
                         <div class="mb-3">
                           <label for="exampleInputEmail1" class="form-label"
                             >Mã giảm giá
@@ -171,9 +172,9 @@
                             class="form-control"
                             id="exampleInputEmail1"
                             aria-describedby="emailHelp"
+                            formControlName = "voucherValue"
                           />
                         </div>
-                      </form>
                     </div>
                     <div class="modal-footer">
                       <button
@@ -183,10 +184,11 @@
                       >
                         Quay lại
                       </button>
-                      <button type="button" class="btn btn-primary">
+                      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
                         Áp dụng mã giảm giá
                       </button>
                     </div>
+                  </form>
                   </div>
                 </div>
               </div>

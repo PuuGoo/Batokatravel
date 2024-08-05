@@ -308,7 +308,7 @@
   ],
   "orders": [
     {
-      "id": "ee17",
+      "id": "a3fe",
       "idProd": {
         "id": "1",
         "price": 1100000,
@@ -325,10 +325,10 @@
         "isFeatured": false,
         "isPopular": false
       },
-      "quantity": 4
+      "quantity": 33
     },
     {
-      "id": "db43",
+      "id": "4181",
       "idProd": {
         "id": "2",
         "price": 2300000,
@@ -344,26 +344,7 @@
         "isFeatured": false,
         "isPopular": false
       },
-      "quantity": 1
-    },
-    {
-      "id": "0278",
-      "idProd": {
-        "id": "3",
-        "price": 4800000,
-        "price_sale": 4000000,
-        "name": "Khám phá Úc",
-        "location": "Thành Phố Gippsland",
-        "time": 5,
-        "images": [
-          "https://pix8.agoda.net/hotelImages/687/687154/687154_14080609040020704429.jpg?ca=2&ce=1&s=1280x"
-        ],
-        "rate_sale": 10,
-        "isSale": true,
-        "isFeatured": false,
-        "isPopular": false
-      },
-      "quantity": 1
+      "quantity": 31
     }
   ],
   "voucher": [
@@ -371,6 +352,21 @@
       "id": "1",
       "name": "giamgia10%",
       "value": 0.1
+    },
+    {
+      "id": "2",
+      "name": "giamgia15%",
+      "value": 0.15
+    },
+    {
+      "id": "3",
+      "name": "giamgia20%",
+      "value": 0.2
+    },
+    {
+      "id": "4",
+      "name": "giamgia25%",
+      "value": 0.25
     }
   ]
 }
