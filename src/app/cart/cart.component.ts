@@ -29,6 +29,8 @@ export class CartComponent {
   idOrder: number = -1;
   totalPrice = 0;
   subtasks: any = [];
+  task: Array<Object> = [];
+
 
   deleteCart(event: any) {
     this.idOrder = event.target?.id;
@@ -45,6 +47,11 @@ export class CartComponent {
     });
   }
 
+  ngOnInit() {
+    console.log(this.task);
+    
+  }
+
   constructor(private router: Router, private render: Renderer2) {
     this.orderService.getAllOrder().then((orders) => {
       this.orders = orders;
@@ -56,16 +63,15 @@ export class CartComponent {
         // console.log(this.totalPrice);
       });
 
-      let task: Array<Object> = [];
       
       this.orders.forEach((e) => {
-        task.push(Object.assign({
+        this.task.push(Object.assign({
           ...e,
           completed: false
         }))
       })
 
-      console.log(task);
+      console.log(this.task);
       
     });
   }
