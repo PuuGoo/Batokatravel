@@ -1,0 +1,61 @@
+<section class="example-section d-flex">
+  <div class="form-check">
+    <input
+      class="form-check-input example-margin"
+      type="checkbox"
+      value=""
+      id="flexCheckIndeterminate"
+    />
+    <label class="form-check-label" for="flexCheckIndeterminate">
+      Click me
+    </label>
+  </div>
+  <div class="form-check">
+    <input
+      class="form-check-input example-margin"
+      type="checkbox"
+      value=""
+      id="flexCheckIndeterminate"
+      [disabled]="true"
+    />
+    <label class="form-check-label" for="flexCheckIndeterminate">
+      Disabled
+    </label>
+  </div>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section form-check">
+    <input
+      class="form-check-input example-margin"
+      type="checkbox"
+      value=""
+      id="flexCheckIndeterminate"
+      [indeterminate]="partiallyComplete()"
+      [checked]="task().completed"
+      (change)="update($event)"
+    />
+    <label class="form-check-label" for="flexCheckIndeterminate">
+      {{ task().name }}
+    </label>
+  </span>
+  <span class="example-list-section">
+    <ul>
+      @for (subtask of task().subtasks; track subtask; let i = $index) {
+      <li class="form-check mb-2">
+        <input
+          class="form-check-input example-margin"
+          type="checkbox"
+          value=""
+          id="flexCheckIndeterminate"
+          [checked]="subtask.completed"
+          (change)="update($event, i)"
+        />
+        <label class="form-check-label" for="flexCheckIndeterminate">
+          {{ subtask.name }}
+        </label>
+      </li>
+      }
+    </ul>
+  </span>
+</section>

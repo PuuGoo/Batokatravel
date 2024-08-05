@@ -6,7 +6,7 @@ import { Order } from '../db';
   providedIn: 'root',
 })
 export class OrderService {
-  url = 'http://localhost:3000/order';
+  url = 'http://localhost:3000/orders';
   orders: Order[] = [];
   
   addOrder(idProd: object, quantity: number) {

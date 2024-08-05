@@ -16,6 +16,8 @@ import { LoginType, UserService } from './services/user.service';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { OrderService } from './services/order.service';
 import { Order } from './db';
+import { CheckoutSuccessComponent } from './checkout-success/checkout-success.component';
+import { CheckboxOverviewExampleComponent } from './components/checkbox-overview-example/checkbox-overview-example.component';
 
 export const routes: Routes = [
   {
@@ -112,6 +114,16 @@ export const routes: Routes = [
     path: 'signup',
     component: SignupComponent,
     title: 'Sign up page',
+  },
+  {
+    path: 'checkoutSuccess',
+    component: CheckoutSuccessComponent,
+    title: 'Checkout Successfully page',
+  },
+  {
+    path: 'components/checkbox',
+    component: CheckboxOverviewExampleComponent,
+    title: 'Checkbox page',
   },
   {
     path: '**',

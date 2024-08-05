@@ -1,4 +1,4 @@
-import { Component, Renderer2, inject } from '@angular/core';
+import { Component, Renderer2, inject, signal } from '@angular/core';
 import { Order, Product } from '../db';
 import { OrderService } from '../services/order.service';
 import {
@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import localeVi from '@angular/common/locales/vi';
 registerLocaleData(localeVi);
+import express from 'express';
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -27,12 +28,13 @@ export class CartComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   idOrder: number = -1;
   totalPrice = 0;
+  subtasks: any = [];
 
   deleteCart(event: any) {
     this.idOrder = event.target?.id;
 
     this.orderService.deleteOrder(this.idOrder).subscribe((res) => {
-      console.log('Delete Successfully!');
+      // console.log('Delete Successfully!');
       // localStorage.setItem('isLoaded', 'true');
       // this.router.navigateByUrl('/cart');
     });
@@ -43,20 +45,28 @@ export class CartComponent {
     });
   }
 
-  checkout() {
-    window.open('http://localhost:8888/order/create_payment_url');
-  }
-
   constructor(private router: Router, private render: Renderer2) {
     this.orderService.getAllOrder().then((orders) => {
       this.orders = orders;
       this.orderService.orders = orders;
       this.orders.map((e) => {
         this.totalPrice += e.idProd?.price * e.quantity;
-        console.log(e.idProd.price);
-        console.log(e.quantity);
-        console.log(this.totalPrice);
+        // console.log(e.idProd.price);
+        // console.log(e.quantity);
+        // console.log(this.totalPrice);
       });
+
+      let task: Array<Object> = [];
+      
+      this.orders.forEach((e) => {
+        task.push(Object.assign({
+          ...e,
+          completed: false
+        }))
+      })
+
+      console.log(task);
+      
     });
   }
 }

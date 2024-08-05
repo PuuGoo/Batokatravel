@@ -38,8 +38,6 @@ export class HeaderComponent {
     console.log(this.filterItems);
   }
 
-
-  
   constructor(private router: Router, private render: Renderer2) {
     this.productService.getAllProducts().then((products) => {
       this.products = products;
@@ -47,12 +45,13 @@ export class HeaderComponent {
 
     this.orderService.getAllOrder().then((orders) => {
       this.orders = orders;
-      console.log(orders);     
-    })
+      this.orderService.orders = orders;
+      console.log(orders);
+    });
 
     // this.render.listen('window', 'click', (e:Event) => {
     //   console.log(e);
-      
+
     // })
   }
 

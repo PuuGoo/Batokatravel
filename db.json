@@ -306,9 +306,9 @@
       "role": "user"
     }
   ],
-  "order": [
+  "orders": [
     {
-      "id": "5482",
+      "id": "ee17",
       "idProd": {
         "id": "1",
         "price": 1100000,
@@ -325,10 +325,10 @@
         "isFeatured": false,
         "isPopular": false
       },
-      "quantity": 1
+      "quantity": 4
     },
     {
-      "id": "100e",
+      "id": "db43",
       "idProd": {
         "id": "2",
         "price": 2300000,
@@ -344,7 +344,26 @@
         "isFeatured": false,
         "isPopular": false
       },
-      "quantity": 4
+      "quantity": 1
+    },
+    {
+      "id": "0278",
+      "idProd": {
+        "id": "3",
+        "price": 4800000,
+        "price_sale": 4000000,
+        "name": "Khám phá Úc",
+        "location": "Thành Phố Gippsland",
+        "time": 5,
+        "images": [
+          "https://pix8.agoda.net/hotelImages/687/687154/687154_14080609040020704429.jpg?ca=2&ce=1&s=1280x"
+        ],
+        "rate_sale": 10,
+        "isSale": true,
+        "isFeatured": false,
+        "isPopular": false
+      },
+      "quantity": 1
     }
   ],
   "voucher": [
