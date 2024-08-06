@@ -55,6 +55,7 @@ export class CheckboxOverviewExampleComponent {
       !task.subtasks.every((t) => t.completed)
     );
   });
+  
 
   update(event: any, index?: number) {
     console.log(event.target.checked);

@@ -8,17 +8,19 @@ import { Order } from '../db';
 export class OrderService {
   url = 'http://localhost:3000/orders';
   orders: Order[] = [];
-  
-  addOrder(idProd: object, quantity: number) {
+
+  addOrder(idProd: object, quantity: number, completed?: boolean) {
     return this.http.post(this.url, {
       idProd: idProd,
       quantity: quantity,
+      completed: false,
     });
   }
 
-  updateOrder(idOrder: number, quantity: number) {
+  updateOrder(idOrder: number, quantity: number, completed?: boolean) {
     return this.http.patch(`${this.url}/${idOrder}`, {
       quantity: quantity,
+      completed: completed
     });
   }
 

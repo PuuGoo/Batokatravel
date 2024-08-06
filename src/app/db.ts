@@ -31,10 +31,11 @@ export interface Order {
   id: number;
   idProd: Product;
   quantity: number;
+  completed?: boolean;
 }
 
 export interface Voucher {
-  id: number,
-  name: string,
-  value: number
+  id: number;
+  name: string;
+  value: number;
 }

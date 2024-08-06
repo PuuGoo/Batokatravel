@@ -308,7 +308,7 @@
   ],
   "orders": [
     {
-      "id": "ee17",
+      "id": "26fe",
       "idProd": {
         "id": "1",
         "price": 1100000,
@@ -325,29 +325,11 @@
         "isFeatured": false,
         "isPopular": false
       },
-      "quantity": 4
+      "quantity": 2,
+      "completed": true
     },
     {
-      "id": "db43",
-      "idProd": {
-        "id": "2",
-        "price": 2300000,
-        "price_sale": 2000000,
-        "name": "Khám phá Thái Lan",
-        "location": "Thành Phố Chiang Mai",
-        "time": 3,
-        "images": [
-          "https://pix8.agoda.net/geo/poi/222405/2_222405.jpg?ca=6&ce=1&s=600x"
-        ],
-        "rate_sale": 25,
-        "isSale": true,
-        "isFeatured": false,
-        "isPopular": false
-      },
-      "quantity": 1
-    },
-    {
-      "id": "0278",
+      "id": "9066",
       "idProd": {
         "id": "3",
         "price": 4800000,
@@ -363,7 +345,8 @@
         "isFeatured": false,
         "isPopular": false
       },
-      "quantity": 1
+      "quantity": 1,
+      "completed": true
     }
   ],
   "voucher": [
@@ -371,6 +354,21 @@
       "id": "1",
       "name": "giamgia10%",
       "value": 0.1
+    },
+    {
+      "id": "2",
+      "name": "giamgia15%",
+      "value": 0.15
+    },
+    {
+      "id": "3",
+      "name": "giamgia20%",
+      "value": 0.2
+    },
+    {
+      "id": "4",
+      "name": "giamgia25%",
+      "value": 0.25
     }
   ]
 }
